@@ -19,6 +19,58 @@ struct zh{//账号
 string str,str2;
 void level_1();
 void yh();
+void cmd(){
+  string a,d,awa;
+  int b,c,qwq;
+  system("cls");
+  while(true){
+    cin>>a;
+    if(a=="start"){
+      getline(cin,d);
+      for(int i=1;i<=ans;i++){
+        if(s[i].name==d){
+          if(s[i].mim!="not"){
+            cout<<"密码:";
+            getline(cin,awa);
+            if(awa!=s[i].mim){
+              cout<<"密码错误"<<endl;
+            }
+            else{
+              cout<<s[i].name<<endl;
+              cout<<"----------------------"<<endl<<s[i].nr<<endl;
+            }
+          }
+          else{
+            cout<<s[i].name<<"---------------------"<<endl<<s[i].nr<<endl;
+          }
+        }
+      }
+    }
+    else if(a=="clean"){
+      system("cls");
+    }
+    else if(a=="rand"){
+      cin>>b>>c;
+      if(b<c){
+        qwq=rand()%b+c-b;
+        cout<<qwq<<endl;
+      }
+      else if(b>c){
+        qwq=rand()%c+b-c;
+        cout<<qwq<<endl;
+      }
+      else{
+        cout<<c<<endl;
+      }
+    }
+    else if(a=="help"){
+      cout<<"请查看文档"<<endl;
+    }
+    else{
+      cout<<"错误"<<endl;
+    }
+  }
+}
 void wjgl(){
 	system("cls");
 	while(true){
@@ -137,16 +189,74 @@ void jsq(){
 		system("cls");
 		yh();
 }
+void cmd1(){
+  string a,d,awa;
+  int b,c,qwq;
+  system("cls");
+  while(true){
+    cin>>a;
+    if(a=="start"){
+      getline(cin,d);
+      for(int i=1;i<=ans;i++){
+        if(s[i].name==d){
+          if(s[i].mim!="not"){
+            cout<<"密码:";
+            getline(cin,awa);
+            if(awa!=s[i].mim){
+              cout<<"密码错误"<<endl;
+            }
+            else{
+              cout<<s[i].name<<endl;
+              cout<<"----------------------"<<endl<<s[i].nr<<endl;
+            }
+          }
+          else{
+            cout<<s[i].name<<"---------------------"<<endl<<s[i].nr<<endl;
+          }
+        }
+      }
+    }
+    else if(a=="clean"){
+      system("cls");
+    }
+    else if(a=="rand"){
+      cin>>b>>c;
+      if(b<c){
+        qwq=rand()%b+c-b;
+        cout<<qwq<<endl;
+      }
+      else if(b>c){
+        qwq=rand()%c+b-c;
+        cout<<qwq<<endl;
+      }
+      else{
+        cout<<c<<endl;
+      }
+    }
+    else if(a=="help"){
+      cout<<"请查看文档"<<endl;
+    }
+    else{
+      cout<<"错误"<<endl;
+    }
+  }
+}
 void level_1(){
 	system("cls");
 	while(true){
-		cout<<"请输入使用什么"<<endl<<"1.计算器 2.文件管理"<<endl;
+		cout<<"请输入使用什么"<<endl<<"1.计算器 2.文件管理 3.cmd"<<endl;
     cin>>n;
     if(n==1){
 			jsq();
 		}
 		else if(n==2){
 			wjgl();
+		}
+		else if(n==3){
+			cmd1;
+		}
+		else{
+			cout<<"错误"<<endl;
 		}
 	}
 }
