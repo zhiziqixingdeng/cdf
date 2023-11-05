@@ -19,7 +19,7 @@ struct zh{//账号
 string str,str2;
 void level_1();
 void yh();
-void cmd(){
+void cmd1(){
   string a,d,awa;
   int b,c,qwq;
   system("cls");
@@ -253,7 +253,7 @@ void level_1(){
 			wjgl();
 		}
 		else if(n==3){
-			cmd1;
+			cmd1();
 		}
 		else{
 			cout<<"错误"<<endl;
