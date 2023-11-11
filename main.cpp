@@ -19,7 +19,7 @@ struct zh{//账号
 string str,str2;
 void level_1();
 void yh();
-void cmd1(){
+void cmd(){
   string a,d,awa;
   int b,c,qwq;
   system("cls");
@@ -253,7 +253,7 @@ void level_1(){
 			wjgl();
 		}
 		else if(n==3){
-			cmd1();
+			cmd1;
 		}
 		else{
 			cout<<"错误"<<endl;
@@ -261,11 +261,10 @@ void level_1(){
 	}
 }
 void yh(){
-	int flag;
 	sleep(1);
 	system("cls");
 	while(true){
-		cout<<"请输入要干什么"<<endl<<"1."<<a[flag2].mz<<"文件夹"<<endl<<"2.软件"<<endl;
+		cout<<"请输入要干什么 1."<<a[flag2].mz<<"文件夹 2.软件"<<endl;
 		cin>>n;
 		if(n==1){
 			system("cls");
@@ -320,6 +319,8 @@ void yh(){
 	}
 }
 void dl(){//登录
+  freopen("CON","r",stdin);
+	freopen("CON","w",stdout);
 	cout<<"名字:";
 	getline(cin,str);
 	for(int i=1;i<=cnt;i++){
@@ -345,6 +346,20 @@ void dl(){//登录
 	}
 }
 int main(){
+	for(int i=1;i<=5;i++){
+	system("color 45");
+	sleep(0.1);
+	system("color 1A");
+	sleep(0.1);
+	system("color 2B");
+	sleep(0.1);
+	system("color 3C");
+	sleep(0.1);
+	}
+	cout<<"cdf"<<endl;
+	sleep(0.1);
+	system("color 07");
+	system("cls");
 	freopen("yz.in","r",stdin);
 	cin>>str;
 	freopen("CON","r",stdin);
