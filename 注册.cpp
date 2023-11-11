@@ -20,11 +20,12 @@ int main(){
   }
   freopen("CON","r",stdin);
   cnt++;
-  cout<<"Ãû×Ö:";
+  cout<<"åå­—:";
   getline(cin,s[cnt].name);
-  cout<<"ÃÜÂë:";
+  cout<<"å¯†ç :";
   getline(cin,s[cnt].mm);
   freopen("yz.in","r",stdin);
+  freopen("yz.in","w",stdout);
   cin>>str;
   if(str=="not"){
     s[cnt].qx=3;
@@ -32,11 +33,13 @@ int main(){
   else{
     s[cnt].qx=1;
   }
+	cout<<"ok"<<endl;
   freopen("CON","r",stdin);
+  freopen("CON","w",stdout);
   freopen("zh.in","w",stdout);
   cout<<cnt<<endl;
   for(int i=1;i<=cnt;i++){
-    cout<<s[i].name<<endl<<s[i].mm<<s[i].qx<<endl;
+    cout<<s[i].name<<endl<<s[i].mm<<endl<<s[i].qx<<endl;
   }
   return 0;
 }
