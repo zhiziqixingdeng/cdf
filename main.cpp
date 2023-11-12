@@ -220,18 +220,8 @@ void cmd1(){
       system("cls");
     }
     else if(a=="rand"){
-      cin>>b>>c;
-      if(b<c){
-        qwq=rand()%b+c-b;
-        cout<<qwq<<endl;
-      }
-      else if(b>c){
-        qwq=rand()%c+b-c;
-        cout<<qwq<<endl;
-      }
-      else{
-        cout<<c<<endl;
-      }
+      qwq=rand();
+      cout<<qwq<<endl;
     }
     else if(a=="help"){
       cout<<"请查看文档"<<endl;
@@ -369,6 +359,7 @@ int main(){
 	else{
     freopen("zh.in","r",stdin);
     cin>>cnt;
+    getchar();
 		for(int i=1;i<=cnt;i++){
 			getline(cin,a[i].mz);
 			getline(cin,a[i].mm);
