@@ -20,14 +20,15 @@ string str,str2;
 void level_1();
 void yh();
 void wjgl(){
-	system("cls");
+  system("cls");
 	while(true){
 		cout<<"请输入需要干什么"<<endl<<"1.添加文件"<<endl<<"2.修改文件"<<endl<<"3.退出"<<endl;
 		cin>>n;
 		if(n==1){
 			system("cls");
-			ans++;
+			ans+=1;
 			cout<<"文件名:";
+			getchar();
 			getline(cin,s[ans].name);
 			cout<<"内容:";
 			getline(cin,s[ans].nr);
@@ -35,6 +36,7 @@ void wjgl(){
 			cin>>w;
 			if(w==1){
 				cout<<"请输入密码:";
+				getchar();
 				getline(cin,s[ans].mim);
 			}
 			else{
@@ -47,6 +49,7 @@ void wjgl(){
 		else if(n==2){
 			system("cls");
       cout<<"请输入编号:";
+      getchar();
       cin>>w;
 			if(w<=0){
 				cout<<"错误"<<endl;
@@ -56,6 +59,7 @@ void wjgl(){
 			else{
 				if(s[w].mim=="not"){
 					cout<<"请输入新名字:";
+					getchar();
 					getline(cin,s[w].name);
 					cout<<"请输入新内容:";
 					getline(cin,s[w].nr);
@@ -66,6 +70,7 @@ void wjgl(){
 				}
 				else{
 					cout<<"请输入密码:";
+					getchar();
 					getline(cin,str);
 					if(str!=s[w].mim){
 						cout<<"密码错误"<<endl;
@@ -174,6 +179,9 @@ void cmd1(){
     else if(a=="help"){
       cout<<"请查看文档"<<endl;
     }
+    else if(a=="end"){
+    	yh();
+		}
     else{
       cout<<"错误"<<endl;
     }
@@ -199,16 +207,15 @@ void level_1(){
 	}
 }
 void yh(){
-	sleep(1);
 	system("cls");
 	while(true){
 		cout<<"请输入要干什么 1."<<a[flag2].mz<<"文件夹 2.软件"<<endl;
 		cin>>n;
 		if(n==1){
-			system("cls");
 			for(int i=1;i<=ans;i++){
 			cout<<s[i].name<<endl;
 			}
+			cout<<endl;
 			cout<<"请输入名字来查看"<<endl;
 			getline(cin,str);
 			flag=0;
@@ -256,33 +263,6 @@ void yh(){
 		}
 	}
 }
-void dl(){//登录
-  freopen("CON","r",stdin);
-	freopen("CON","w",stdout);
-	cout<<"名字:";
-	getline(cin,str);
-	for(int i=1;i<=cnt;i++){
-		if(str==a[i].mz){
-			flag=1;
-			flag2=i;
-			break;
-		}
-	}
-	if(flag==0){
-		cout<<"账号不存在!"<<endl;
-		sleep(1);
-		return;
-	}
-	else{
-		cout<<"密码:";
-		cin>>str;
-		if(str==a[flag2].mm){
-			cout<<"欢迎!"<<endl;
-			yh();
-			return;
-		}
-	}
-}
 int main(){
 	for(int i=1;i<=5;i++){
 	system("color 45");
@@ -322,7 +302,28 @@ int main(){
 			getline(cin,s[i].mim);
 		}
 		freopen("CON","r",stdin);
-		dl();//登录
+		cout<<"名字:";
+	getline(cin,str);
+	for(int i=1;i<=cnt;i++){
+		if(str==a[i].mz){
+			flag=1;
+			flag2=i;
+			break;
+		}
+	}
+	if(flag==0){
+		cout<<"账号不存在!"<<endl;
+		sleep(1);
+		return 0;
+	}
+	else{
+		cout<<"密码:";
+		cin>>str;
+		if(str==a[flag2].mm){
+			cout<<"欢迎!"<<endl;
+			yh();
+		}
+	}
 	}
 	return 0;
-}
+}//这次bug真是多(被打)
