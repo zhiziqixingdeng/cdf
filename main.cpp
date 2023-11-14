@@ -19,6 +19,28 @@ struct zh{//账号
 string str,str2;
 void level_1();
 void yh();
+void fg(){
+	system("cls");
+	cout<<"请问你喜欢什么风格"<<endl<<"1.经典黑白"<<endl<<"2.蓝天白云"<<endl<<"3.黑客"<<endl<<"4.中国红"<<endl;
+	int x;
+	cin>>x;
+	if(x==1){
+		system("color 07");
+	}
+	else if(x==2){
+		system("color 37");
+	}
+	else if(x==3){
+		system("color 02");
+	}
+	else if(x==4){
+		system("color 47");
+	}
+	else{
+		cout<<"错误"<<endl;
+	}
+	return;
+}
 void wjgl(){
   system("cls");
 	while(true){
@@ -96,12 +118,12 @@ void wjgl(){
 		else if(n==3){
 			cout<<"好的"<<endl;
 			freopen("wj.in","w",stdout);
-			cout<<ans<<endl;
+			cout<<ans;
 			for(int i=1;i<=ans;i++){
 				cout<<s[i].name<<endl<<s[i].nr<<endl<<s[i].mim<<endl;
 			}
 			freopen("CON","w",stdout);
-			yh();
+			return;
 		}
 		else{
 			cout<<"错误"<<endl;
@@ -140,7 +162,7 @@ void jsq(){
 		}
 		system("pause");
 		system("cls");
-		yh();
+		return;
 }
 void cmd1(){
   string a,d,awa;
@@ -180,7 +202,7 @@ void cmd1(){
       cout<<"请查看文档"<<endl;
     }
     else if(a=="end"){
-    	yh();
+    	return;
 		}
     else{
       cout<<"错误"<<endl;
@@ -190,7 +212,7 @@ void cmd1(){
 void level_1(){
 	system("cls");
 	while(true){
-		cout<<"请输入使用什么"<<endl<<"1.计算器 2.文件管理 3.cmd"<<endl;
+		cout<<"请输入使用什么"<<endl<<"1.计算器 2.文件管理 3.cmd"<<endl<<"4.个性化 5.退出"<<endl;
     cin>>n;
     if(n==1){
 			jsq();
@@ -199,7 +221,10 @@ void level_1(){
 			wjgl();
 		}
 		else if(n==3){
-			cmd1;
+			cmd1();
+		}
+		else if(n==4){
+			fg();
 		}
 		else{
 			cout<<"错误"<<endl;
@@ -326,4 +351,4 @@ int main(){
 	}
 	}
 	return 0;
-}//这次bug真是多(被打)
+}
