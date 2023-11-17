@@ -3,6 +3,8 @@
 #include <unistd.h>
 #include <string>
 #include <ctime>
+#include <stack>
+#include <queue>
 using namespace std;
 int n,w,cnt,ans;//cnt账号数量,ans文件数量
 int flag,flag2;
@@ -19,6 +21,115 @@ struct zh{//账号
 string str,str2;
 void level_1();
 void yh();
+void txjs(){
+  int a,b,c;
+  cout<<"需要什么图形计算"<<endl<<"1.长方形/平行四边形"<<endl<<"2.三角形"<<endl<<"3.梯形"<<endl;
+  cin>>w;
+  if(w==1){
+    cout<<"底/长:";
+    cin>>a;
+    cout<<"高/宽;";
+    cin>>b;
+    cout<<"面积:"<<a*b<<endl;
+  }
+  else if(w==2){
+    cout<<"底:";
+    cin>>a;
+    cout<<"高:";
+    cin>>b;
+    cout<<"面积:"<<a*b/2<<endl;
+  }
+  else if(w==3){
+    cout<<"上底:";
+    cin>>a;
+    cout<<"下底:";
+    cin>>b;
+    cout<<"高:";
+    cin>>c;
+    cout<<"面积:"<<(a+b)*c/2<<endl;
+  }
+  else{
+    cout<<"更多图形正在开发中"<<endl;
+  }
+  system("pause");
+  return;
+}
+void stackto(){
+ 	string s;
+  int a;
+  bool l;
+  stack<int> x;
+  while(s!="END"){
+    cin>>s;
+    if(s=="in"){
+      getchar();
+      cin>>a;
+      x.push(a);
+    }
+   		else if(s=="out"){
+   			l=x.empty();
+       if(l==false){
+         x.top();
+       }
+       else{
+         cout<<"not"<<endl;
+       }
+     }
+    else if(s=="del"){
+       x.pop();
+    }
+    else if(s=="have"){
+      x.size();
+    }
+    else if(s=="END"){
+      break;
+    }
+    else{
+      cout<<"错误"<<endl;
+    }
+  }
+  while(l==false){
+  	l=x.empty();
+    x.top();
+    x.pop();
+  }
+  system("pause");
+  return;
+}
+void queueto(){
+  string s;
+  int a;
+  queue<int> x;
+  while(s!="END"){
+    cin>>s;
+    if(s=="in"){
+     getchar();
+     cin>>a;
+     x.push(a);
+    }
+    else if(s=="out"){
+      cout<<"前：";
+      x.front();
+      cout<<"后：";
+      x.back();
+    }
+    else if(s=="del"){
+      x.pop();
+    }
+    else if(s=="end"){
+      break;
+    }
+    else{
+      cout<<"错误"<<endl;
+    }
+  }
+  while(x.empty()==false){
+    x.front();
+    x.pop();
+  }
+  system("pause");
+  return;
+}
 void fg(){
 	system("cls");
 	cout<<"请问你喜欢什么风格"<<endl<<"1.经典黑白"<<endl<<"2.蓝天白云"<<endl<<"3.黑客"<<endl<<"4.中国红"<<endl;
@@ -212,7 +323,7 @@ void cmd1(){
 void level_1(){
 	system("cls");
 	while(true){
-		cout<<"请输入使用什么"<<endl<<"1.计算器 2.文件管理 3.cmd"<<endl<<"4.个性化 5.退出"<<endl;
+		cout<<"请输入使用什么"<<endl<<"1.计算器 2.文件管理 3.cmd"<<endl<<"4.个性化 5.栈模拟 6.队列模拟"<<endl<<"7.图形计算 8.退出";
     cin>>n;
     if(n==1){
 			jsq();
@@ -225,6 +336,18 @@ void level_1(){
 		}
 		else if(n==4){
 			fg();
+		}
+		else if(n==5){
+			stackto();
+		}
+		else if(n==6){
+			queueto();
+		}
+    else if(n==7){
+    	txjs();
+		}
+		else if(n==8){
+			return;
 		}
 		else{
 			cout<<"错误"<<endl;
